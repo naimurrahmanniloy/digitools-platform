@@ -28,51 +28,98 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <a>Products</a>
+              </li>
+
+              <li>
+                <a>Features</a>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <a>Pricing</a>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>Testimonials</a>
+              </li>
+              <li>
+                <a>FAQ</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="text-4xl font-bold">
+            <span className="bg-linear-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
+              DigiTools
+            </span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <a>Products</a>
+            </li>
+
+            <li>
+              <a>Features</a>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2 bg-base-100 w-40 z-1">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <a>Pricing</a>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Testimonials</a>
+            </li>
+            <li>
+              <a>FAQ</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div className="mr-5">
+            <div className="dropdown dropdown-end flex-one">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle "
+              >
+                <div className="indicator">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    {" "}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                    />{" "}
+                  </svg>
+                  <span className="badge badge-sm bg-red-500 indicator-item">
+                    8
+                  </span>
+                </div>
+              </div>
+              <div
+                tabIndex={0}
+                className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
+              >
+                <div className="card-body">
+                  <span className="text-lg  font-bold">8 Items</span>
+                  <span className="text-info">Subtotal: $999</span>
+                  <div className="card-actions">
+                    <button className="btn btn-primary btn-block">
+                      View cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a className="btn mr-5 border-0">Login</a>
+          <a className="btn rounded-3xl text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa]">
+            Get Started
+          </a>
         </div>
       </div>
     </div>
