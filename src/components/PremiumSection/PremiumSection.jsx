@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import Cards from "../Cards/Cards";
 
 const PremiumSection = ({ fetchData }) => {
   const productData = use(fetchData);
@@ -12,7 +13,11 @@ const PremiumSection = ({ fetchData }) => {
           designed <br /> to boost your productivity and creativity.
         </p>
       </div>
-      {}
+      <div className="grid lg:grid-cols-3 gap-3 mt-12">
+        {productData.map((product) => {
+          return <Cards product={product} key={product.id} />;
+        })}
+      </div>
     </div>
   );
 };

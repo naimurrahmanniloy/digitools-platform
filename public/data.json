@@ -3,18 +3,18 @@
     "id": "prod_01",
     "name": "Starter Pack",
     "description": "Perfect for individuals looking to build their first professional resume.",
-    "price": 0,
+    "price": "$13.20",
     "period": "one-time",
     "tag": "Free",
     "tagType": "new",
     "features": ["3 Basic templates", "Export to PDF", "Basic editor"],
-    "icon": "sparkles"
+    "icon": "https://i.ibb.co.com/spTJ42CX/design-tool.png"
   },
   {
     "id": "prod_02",
     "name": "Pro Monthly",
     "description": "Full access to all premium tools and ATS optimization for active job seekers.",
-    "price": 19.99,
+    "price": "$19.99",
     "period": "monthly",
     "tag": "Best Seller",
     "tagType": "best-seller",
@@ -24,13 +24,13 @@
       "AI Cover Letter generator",
       "Priority support"
     ],
-    "icon": "zap"
+    "icon": "https://i.ibb.co.com/F4DXsd7w/operation.png"
   },
   {
     "id": "prod_03",
     "name": "Pro Yearly",
     "description": "The best value for long-term career management and portfolio building.",
-    "price": 149.99,
+    "price": "$149.99",
     "period": "yearly",
     "tag": "Save 40%",
     "tagType": "popular",
@@ -40,13 +40,13 @@
       "Unlimited downloads",
       "Early access to new tools"
     ],
-    "icon": "crown"
+    "icon": "https://i.ibb.co.com/mVGjwHTF/portfolio.png"
   },
   {
     "id": "prod_04",
     "name": "AI Resume Review",
     "description": "Get a detailed breakdown of your resume's performance against job descriptions.",
-    "price": 9.99,
+    "price": "$9.99",
     "period": "one-time",
     "tag": "Hot",
     "tagType": "popular",
@@ -55,13 +55,13 @@
       "Keyword gap analysis",
       "Formatting suggestions"
     ],
-    "icon": "magnifying-glass"
+    "icon": "https://i.ibb.co.com/2YvBDfFV/social-media.png"
   },
   {
     "id": "prod_05",
     "name": "Enterprise Suite",
     "description": "Tailored solutions for universities and recruitment agencies.",
-    "price": 499.99,
+    "price": "$499.99",
     "period": "yearly",
     "tag": "New",
     "tagType": "new",
@@ -71,13 +71,13 @@
       "Team collaboration",
       "Dedicated account manager"
     ],
-    "icon": "briefcase"
+    "icon": "https://i.ibb.co.com/jvtJXRpP/writing-2327400-1.png"
   },
   {
     "id": "prod_06",
     "name": "LinkedIn Optimizer",
     "description": "Expert rewrite of your LinkedIn profile to attract recruiters.",
-    "price": 49.0,
+    "price": "$49.00",
     "period": "one-time",
     "tag": "Popular",
     "tagType": "popular",
@@ -86,36 +86,6 @@
       "About section overhaul",
       "Skill section optimization"
     ],
-    "icon": "link"
-  },
-  {
-    "id": "prod_07",
-    "name": "Template Bundle",
-    "description": "A collection of 20 creative templates for designers and marketers.",
-    "price": 29.0,
-    "period": "one-time",
-    "tag": "Best Seller",
-    "tagType": "best-seller",
-    "features": [
-      "20 Creative layouts",
-      "Photoshop/Figma source files",
-      "Lifetime updates"
-    ],
-    "icon": "document-duplicate"
-  },
-  {
-    "id": "prod_08",
-    "name": "Career Coaching",
-    "description": "1-on-1 session with a professional recruiter to refine your strategy.",
-    "price": 99.0,
-    "period": "one-time",
-    "tag": "Expert Choice",
-    "tagType": "popular",
-    "features": [
-      "60-minute video call",
-      "Mock interview",
-      "Actionable feedback plan"
-    ],
-    "icon": "user-group"
+    "icon": "https://i.ibb.co.com/MDBM7VYN/camera.png"
   }
 ]
