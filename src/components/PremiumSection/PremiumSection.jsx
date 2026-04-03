@@ -2,14 +2,14 @@ import React, { use, useState } from "react";
 import AvaiableCards from "../AvaiableCards/AvaiableCards";
 import Cart from "../Cart/Cart";
 
-const PremiumSection = ({ fetchData }) => {
+const PremiumSection = ({ fetchData, selectedProduct, setSelectedProduct }) => {
   const productData = use(fetchData);
 
   const [selected, setSelected] = useState("products");
   const handleSelect = (op) => {
     setSelected(op);
   };
-  const [selectedProduct, setSelectedProduct] = useState([]);
+
   return (
     <div>
       <div className="w-11/12 mx-auto">

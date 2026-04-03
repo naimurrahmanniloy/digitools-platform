@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaCheck } from "react-icons/fa";
 import { ToastContainer } from "react-toastify";
 
 const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
@@ -69,7 +70,7 @@ const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
             <button
               onClick={() => handleAddToCart(true)}
               disabled={selected}
-              className="btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"
+              className={` ${selected ? "btn btn-outline text-black btn-block rounded-full" : "btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"}`}
             >
               <ToastContainer
                 position="top-right"
@@ -83,7 +84,16 @@ const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
                 pauseOnHover
                 theme="dark"
               />
-              {selected ? <span>Add To Cart</span> : "Book now"}
+              {selected ? (
+                <span className="flex gap-2 items-center justify-center">
+                  <span>
+                    <FaCheck />
+                  </span>{" "}
+                  Add To Cart
+                </span>
+              ) : (
+                "Book now"
+              )}
             </button>
           </div>
         </div>

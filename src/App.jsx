@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Homepage from "./components/Homepage/Homepage";
 import Navbar from "./components/Navbar/Navbar";
@@ -13,15 +13,20 @@ const loadData = async () => {
 
 function App() {
   const fetchData = loadData();
+  const [selectedProduct, setSelectedProduct] = useState([]);
   return (
     <>
-      <Navbar />
+      <Navbar selectedProduct={selectedProduct} />
       <Homepage />
       <Rating />
       <Suspense
         fallback={<span className="loading loading-spinner loading-xl"></span>}
       >
-        <PremiumSection fetchData={fetchData} />
+        <PremiumSection
+          selectedProduct={selectedProduct}
+          setSelectedProduct={setSelectedProduct}
+          fetchData={fetchData}
+        />
       </Suspense>
     </>
   );
