@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
-const Cards = ({ product }) => {
-  const [selected, setSelected] = useState("Buy Now");
-  const handleSelect = () => {
-    setSelected("Selected");
+const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
+  const [selected, setSelected] = useState(false);
+
+  const handleAddToCart = (op) => {
+    setSelected(op);
+    setSelectedProduct([...selectedProduct, product]);
   };
   return (
     <div>
@@ -64,10 +67,23 @@ const Cards = ({ product }) => {
           </ul>
           <div className="mt-6">
             <button
-              onClick={() => handleSelect()}
+              onClick={() => handleAddToCart(true)}
+              disabled={selected}
               className="btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"
             >
-              {selected}
+              <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
+              {selected ? <span>Add To Cart</span> : "Book now"}
             </button>
           </div>
         </div>

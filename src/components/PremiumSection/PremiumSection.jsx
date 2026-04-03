@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
-import Cards from "../Cards/Cards";
 import AvaiableCards from "../AvaiableCards/AvaiableCards";
+import Cart from "../Cart/Cart";
 
 const PremiumSection = ({ fetchData }) => {
   const productData = use(fetchData);
@@ -9,6 +9,7 @@ const PremiumSection = ({ fetchData }) => {
   const handleSelect = (op) => {
     setSelected(op);
   };
+  const [selectedProduct, setSelectedProduct] = useState([]);
   return (
     <div>
       <div className="w-11/12 mx-auto">
@@ -41,8 +42,15 @@ const PremiumSection = ({ fetchData }) => {
           </button>
         </div>
 
-        {selected === "products" && <AvaiableCards productData={productData} />}
-        {selected === "cart" && <div>Cart content will be displayed here</div>}
+        {selected === "products" ? (
+          <AvaiableCards
+            productData={productData}
+            selectedProduct={selectedProduct}
+            setSelectedProduct={setSelectedProduct}
+          />
+        ) : (
+          <Cart selectedProduct={selectedProduct} />
+        )}
       </div>
     </div>
   );
