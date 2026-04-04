@@ -1,16 +1,15 @@
 import React from "react";
 
 const Cart = ({ selectedProduct, setSelectedProduct }) => {
-  console.log(selectedProduct);
   const totalPrice = selectedProduct.reduce((total, product) => {
     const price = parseFloat(product.price.replace("$", ""));
     return total + price;
   }, 0);
-  const handleRemove = (remove) => {
-    const updatedCart = selectedProduct.filter(
-      (product) => product.id !== remove.id,
+  const handleRemove = (removalProduct) => {
+    const updatedProduct = selectedProduct.filter(
+      (product) => product !== removalProduct,
     );
-    setSelectedProduct(updatedCart);
+    setSelectedProduct(updatedProduct);
   };
   return (
     <div className="w-11/12 mx-auto mt-10 border border-gray-200 rounded-lg p-6">
@@ -37,7 +36,7 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
                   </div>
                   <div className="card-actions mt-10 justify-end">
                     <button
-                      onClick={handleRemove()}
+                      onClick={() => handleRemove(product)}
                       className="text-red-500 cursor-pointer"
                     >
                       Remove
