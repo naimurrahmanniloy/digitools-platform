@@ -18,10 +18,13 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
       autoClose: 4000,
     });
   };
+  const notifyRemove = () => {
+    toast.success("Item removed from cart.", {
+      position: "top-center",
+      autoClose: 4000,
+    });
+  };
   const handleCheckout = () => {
-    alert(
-      `Checkout successful! Thank you for your purchase. Total: $${totalPrice}`,
-    );
     setSelectedProduct([]);
   };
   return (
@@ -49,7 +52,10 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
                   </div>
                   <div className="card-actions mt-10 justify-end">
                     <button
-                      onClick={() => handleRemove(product)}
+                      onClick={() => {
+                        handleRemove(product);
+                        notifyRemove();
+                      }}
                       className="text-red-500 cursor-pointer"
                     >
                       Remove
