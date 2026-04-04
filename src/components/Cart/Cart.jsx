@@ -11,6 +11,13 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
     );
     setSelectedProduct(updatedProduct);
   };
+
+  const handleCheckout = () => {
+    alert(
+      `Checkout successful! Thank you for your purchase. Total: $${totalPrice}`,
+    );
+    setSelectedProduct([]);
+  };
   return (
     <div className="w-11/12 mx-auto mt-10 border border-gray-200 rounded-lg p-6">
       <h1 className="text-3xl mb-2">Your Cart</h1>
@@ -51,7 +58,10 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
             <h2 className="text-2xl font-bold">Total: </h2>
             <h2 className="text-3xl">${totalPrice}</h2>
           </div>
-          <button className="btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full">
+          <button
+            onClick={() => handleCheckout()}
+            className="btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"
+          >
             Checkout
           </button>
         </div>

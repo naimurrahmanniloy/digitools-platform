@@ -38,7 +38,7 @@ const PremiumSection = ({ fetchData, selectedProduct, setSelectedProduct }) => {
               handleSelect("cart");
             }}
           >
-            Cart
+            Cart ({selectedProduct.length})
           </button>
         </div>
 
