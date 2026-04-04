@@ -14,7 +14,7 @@ const Pricing = ({ fetchPricing }) => {
           Choose the plan that fits your needs. Upgrade or downgrade anytime.
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 gap-4 w-11/12 mx-auto mt-10">
+      <div className="flex justify-evenly w-11/12 mx-auto mt-10">
         {pricingPlan.map((plan) => {
           return <PricingCard plan={plan} key={plan.style}></PricingCard>;
         })}
