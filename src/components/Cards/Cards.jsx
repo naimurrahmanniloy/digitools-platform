@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
   const [selected, setSelected] = useState(false);
@@ -9,6 +9,13 @@ const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
     setSelected(op);
     setSelectedProduct([...selectedProduct, product]);
   };
+  const notify = () => {
+    toast.success("Successfully added to cart! ", {
+      position: "top-center",
+      autoClose: 4000,
+    });
+  };
+
   return (
     <div>
       <div className="card w-96 bg-base-100 shadow-sm">
@@ -68,7 +75,10 @@ const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
           </ul>
           <div className="mt-6">
             <button
-              onClick={() => handleAddToCart(true)}
+              onClick={() => {
+                handleAddToCart(true);
+                notify();
+              }}
               disabled={selected}
               className={` ${selected ? "btn btn-outline text-black btn-block rounded-full" : "btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"}`}
             >

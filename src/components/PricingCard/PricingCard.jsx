@@ -46,7 +46,7 @@ const PricingCard = ({ plan }) => {
           </ul>
           <div className="mt-6">
             {plan.tier === "Pro" && (
-              <button className="btn text-white btn-outline btn-block rounded-full">
+              <button className="btn  btn-outline btn-block rounded-full">
                 {plan.button_text}
               </button>
             )}

@@ -6,6 +6,9 @@ import PremiumSection from "./components/PremiumSection/PremiumSection";
 import Rating from "./components/Rating/Rating";
 import StepsSection from "./components/StepsSection/StepsSection";
 import Pricing from "./components/Pricing/Pricing";
+import TransformSection from "./components/TransformSection/TransformSection";
+import FooterSection from "./components/FooterSection/FooterSection";
+import { ToastContainer } from "react-toastify";
 
 const loadData = async () => {
   const res = await fetch("/data.json");
@@ -44,6 +47,10 @@ function App() {
       >
         <Pricing fetchPricing={fetchPricing} />
       </Suspense>
+      <TransformSection />
+      {/* <FooterSection /> */}
+      <FooterSection />
+      <ToastContainer />
     </>
   );
 }

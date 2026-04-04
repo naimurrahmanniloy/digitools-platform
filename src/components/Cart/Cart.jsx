@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const Cart = ({ selectedProduct, setSelectedProduct }) => {
   const totalPrice = selectedProduct.reduce((total, product) => {
@@ -11,7 +12,12 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
     );
     setSelectedProduct(updatedProduct);
   };
-
+  const notify = () => {
+    toast.success("You have successfully purchased.", {
+      position: "top-center",
+      autoClose: 4000,
+    });
+  };
   const handleCheckout = () => {
     alert(
       `Checkout successful! Thank you for your purchase. Total: $${totalPrice}`,
@@ -59,7 +65,10 @@ const Cart = ({ selectedProduct, setSelectedProduct }) => {
             <h2 className="text-3xl">${totalPrice}</h2>
           </div>
           <button
-            onClick={() => handleCheckout()}
+            onClick={() => {
+              handleCheckout();
+              notify();
+            }}
             className="btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"
           >
             Checkout
