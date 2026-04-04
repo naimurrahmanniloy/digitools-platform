@@ -72,18 +72,6 @@ const Cards = ({ product, selectedProduct, setSelectedProduct }) => {
               disabled={selected}
               className={` ${selected ? "btn btn-outline text-black btn-block rounded-full" : "btn text-white bg-linear-to-r from-[#4f39f6] to-[#9514fa] btn-block rounded-full"}`}
             >
-              <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
               {selected ? (
                 <span className="flex gap-2 items-center justify-center">
                   <span>

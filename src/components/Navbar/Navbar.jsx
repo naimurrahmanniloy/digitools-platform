@@ -97,7 +97,7 @@ const Navbar = ({ selectedProduct }) => {
                   </svg>
                   <span
                     href="#"
-                    className="badge badge-sm bg-red-500 indicator-item"
+                    className="badge badge-sm text-white bg-rose-400 indicator-item"
                   >
                     {selectedProduct.length}
                   </span>

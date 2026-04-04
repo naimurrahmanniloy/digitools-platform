@@ -1,16 +1,24 @@
 import React from "react";
 
-const Cart = ({ selectedProduct }) => {
+const Cart = ({ selectedProduct, setSelectedProduct }) => {
   console.log(selectedProduct);
   const totalPrice = selectedProduct.reduce((total, product) => {
     const price = parseFloat(product.price.replace("$", ""));
     return total + price;
   }, 0);
+  const handleRemove = (remove) => {
+    const updatedCart = selectedProduct.filter(
+      (product) => product.id !== remove.id,
+    );
+    setSelectedProduct(updatedCart);
+  };
   return (
     <div className="w-11/12 mx-auto mt-10 border border-gray-200 rounded-lg p-6">
       <h1 className="text-3xl mb-2">Your Cart</h1>
       {selectedProduct.length === 0 ? (
-        <p className="text-gray-500">Your cart is empty.</p>
+        <p className="text-gray-500 text-2xl text-center p-20">
+          Your cart is empty.
+        </p>
       ) : (
         <div className="w-11/12 mx-auto mt-10 mb-10 ">
           {selectedProduct.map((product) => {
@@ -28,7 +36,10 @@ const Cart = ({ selectedProduct }) => {
                     <p>{product.price}</p>
                   </div>
                   <div className="card-actions mt-10 justify-end">
-                    <button className="text-red-500 cursor-pointer">
+                    <button
+                      onClick={handleRemove()}
+                      className="text-red-500 cursor-pointer"
+                    >
                       Remove
                     </button>
                   </div>

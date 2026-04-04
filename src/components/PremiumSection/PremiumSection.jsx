@@ -49,7 +49,10 @@ const PremiumSection = ({ fetchData, selectedProduct, setSelectedProduct }) => {
             setSelectedProduct={setSelectedProduct}
           />
         ) : (
-          <Cart selectedProduct={selectedProduct} />
+          <Cart
+            selectedProduct={selectedProduct}
+            setSelectedProduct={setSelectedProduct}
+          />
         )}
       </div>
     </div>
